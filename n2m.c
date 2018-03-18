@@ -4,11 +4,11 @@
 #include "lib.h"
 
 
-int main() {   
+int n2m() {   
 
     int baseAtual,baseDesejada;
-    long int NumeroBase10;
-    char *NumeroInicial[12];
+    long int NumeroBase10 = 0;
+    char *NumeroInicial;
 
 	printf("n2m ");
     scanf ("%s %d %d", &NumeroInicial, &baseAtual, &baseDesejada);
