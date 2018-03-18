@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "lib.h"
 
 
@@ -10,7 +11,7 @@ int main() {
     char* NumeroInicial[12];
 
 	printf("n2m ");
-    scanf ("%c %d %d", &NumeroInicial, &baseAtual, &baseDesejada);
+    scanf ("%s %d %d", &NumeroInicial, &baseAtual, &baseDesejada);
     printf("\n");
 
     if (baseAtual >= 2 && baseAtual <= 36 && baseDesejada >= 2 && baseDesejada <= 36){
