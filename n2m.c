@@ -3,29 +3,27 @@
 #include "lib.h"
 
 
+int main() {   
 
-int main() {
-    int baseAtual,baseDesejada,temp;
+    int baseAtual,baseDesejada;
+    long int NumeroBase10;
     char* NumeroInicial[12];
 
-	printf("n2m");
+	printf("n2m ");
     scanf ("%c %d %d", &NumeroInicial, &baseAtual, &baseDesejada);
+    printf("\n");
 
     if (baseAtual >= 2 && baseAtual <= 36 && baseDesejada >= 2 && baseDesejada <= 36){
         return 1;
     }
 
-    temp = convertToTen(NumeroInicial, baseAtual);
+    NumeroBase10 = convertToTen(NumeroInicial, baseAtual);
 
-    if (temp <= ( pow ( 2 , 36 ) ) && temp >= 0 ){
-        
-        
-        printf("\n");
-
-
-        return 0;
-    }
-   
+    if (NumeroBase10 <= ( pow ( 2 , 36 ) ) && NumeroBase10 >= 0 ){               
+       
+       convertToBase(NumeroBase10, baseDesejada);
+       return 0;
+    }   
 
     return 1;
 }
