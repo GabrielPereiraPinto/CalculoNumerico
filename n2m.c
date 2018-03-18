@@ -8,7 +8,7 @@ int main() {
 
     int baseAtual,baseDesejada;
     long int NumeroBase10;
-    char* NumeroInicial[12];
+    char *NumeroInicial[12];
 
 	printf("n2m ");
     scanf ("%s %d %d", &NumeroInicial, &baseAtual, &baseDesejada);

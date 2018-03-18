@@ -13,7 +13,7 @@ long int convertToTen (char *NumeroInicial, int baseAtual ){
     }
 
     return NumeroBase10;
-};
+}
 
 
 int convertToDecimal (char digito){
@@ -24,7 +24,7 @@ int convertToDecimal (char digito){
     else
         return (int) digito - 'A'+10;
 
-};
+}
 
 void convertToBase(long int NumeroBase10, int baseDesejada){
 
@@ -49,7 +49,7 @@ char base_digits[36] =
         printf ("%c", base_digits[convertido[index]]);
     }
     printf ("\n");
-};
+}
 
 
 
