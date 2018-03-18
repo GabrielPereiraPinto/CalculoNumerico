@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
 #include "lib.h"
 
 
@@ -9,7 +8,7 @@ long int convertToTen (char *NumeroInicial, int baseAtual ){
     long int NumeroBase10 = 0;
 
     for (int i = 0; strlen(NumeroInicial); i++){
-        NumeroBase10 += convertToDecimal(NumeroInicial[strlen(NumeroInicial) - 1 - i ]) * pow (baseAtual,i);
+        NumeroBase10 += convertToDecimal(NumeroInicial[strlen(NumeroInicial) - 1 - i ]) * Exponencial(baseAtual,i);
     }
 
     return NumeroBase10;
@@ -49,6 +48,14 @@ char base_digits[36] =
         printf ("%c", base_digits[convertido[index]]);
     }
     printf ("\n");
+}
+
+int Exponencial(int numero, int expoente) {
+
+	int numeroFinal=numero;
+	for (int i = 1; i < expoente; i++) {
+		numeroFinal = numeroFinal * numero;
+	}
 }
 
 
