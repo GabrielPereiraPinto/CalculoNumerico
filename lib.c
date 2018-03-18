@@ -24,8 +24,7 @@ int convertToDecimal (char digito){
 		if (digito >= 97 && digito <= 122) {
 			digito -= 32; //deixa maiusculo, caso seja minusculo;
 		}
-
-		return (int)((int)digito-(int)'A'+10);
+		return (int) digito - 'A' + 10;
 	}
 
 }
@@ -57,9 +56,9 @@ char base_digits[36] =
 
 int Exponencial(int numero, int expoente) {
 
-	long int numeroFinal=numero;
+	long int numeroFinal=1;
 	for (int i = 1; i < expoente; i++) {
-		numeroFinal = numeroFinal * numero;
+		numeroFinal *= numero;
 	}
 	return numeroFinal;
 }
