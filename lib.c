@@ -18,14 +18,14 @@ long int convertToTen (char NumeroInicial[], int baseAtual ){
 int convertToDecimal (char digito){
 
     if (digito >= '0' && digito <= '9')
-        return (int) digito - '0';
+        return (int) (digito - '0');
 
 	else {
 		if (digito >= 97 && digito <= 122) {
 			digito -= 32; //deixa maiusculo, caso seja minusculo;
 		}
 
-		return (int)digito - 'A' + 10;
+		return (int)((int)digito-(int)'A'+10);
 	}
 
 }
