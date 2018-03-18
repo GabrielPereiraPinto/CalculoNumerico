@@ -57,7 +57,7 @@ char base_digits[36] =
 int Exponencial(int numero, int expoente) {
 
 	long int numeroFinal=1;
-	for (int i = 1; i < expoente; i++) {
+	for (int i = 0; i < expoente; i++) {
 		numeroFinal *= numero;
 	}
 	return numeroFinal;
