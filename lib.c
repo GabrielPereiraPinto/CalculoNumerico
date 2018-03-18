@@ -61,6 +61,7 @@ int Exponencial(int numero, int expoente) {
 	for (int i = 1; i < expoente; i++) {
 		numeroFinal = numeroFinal * numero;
 	}
+	return numeroFinal;
 }
 
 
