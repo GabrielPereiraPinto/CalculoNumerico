@@ -22,11 +22,11 @@ int main(int argc, char *argv[]
 
 		printf("\n");
 
-		if (baseAtual <= 2 &&  baseAtual>=36){
+		if (!(baseAtual >= 2 &&  baseAtual<=36)){
 			printf("Bases atual invalida, menor do que 2 ou maior do que 36 \n");
 			return 1;
 		}
-		if (baseDesejada <= 2 && baseDesejada >= 36){
+		if (!(baseDesejada >= 2 && baseDesejada <= 36)){
 			printf("Bases atual invalida, menor do que 2 ou maior do que 36 \n");
 			return 1;
 		}
