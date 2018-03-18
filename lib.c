@@ -4,7 +4,7 @@
 
 
 
-long int convertToTen (char *NumeroInicial, int baseAtual ){
+long int convertToTen (char NumeroInicial[], int baseAtual ){
     long int NumeroBase10 = 0;
 
     for (int i = 0; strlen(NumeroInicial); i++){
@@ -20,8 +20,13 @@ int convertToDecimal (char digito){
     if (digito >= '0' && digito <= '9')
         return (int) digito - '0';
 
-    else
-        return (int) digito - 'A'+10;
+	else {
+		if (digito >= 97 && digito <= 122) {
+			digito -= 32; //deixa maiusculo, caso seja minusculo;
+		}
+
+		return (int)digito - 'A' + 10;
+	}
 
 }
 
