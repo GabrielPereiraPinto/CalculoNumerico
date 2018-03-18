@@ -6,9 +6,9 @@
 
 long int convertToTen (char NumeroInicial[], int baseAtual ){
     long int NumeroBase10 = 0;
-
-    for (int i = 0; strlen(NumeroInicial); i++){
-        NumeroBase10 += convertToDecimal(NumeroInicial[strlen(NumeroInicial) - 1 - i ]) * Exponencial(baseAtual,i);
+	int tamanho = strlen(NumeroInicial);
+    for (int i = 0; i< tamanho; i++){
+        NumeroBase10 += convertToDecimal(NumeroInicial[tamanho - 1 - i ]) * Exponencial(baseAtual,i);
     }
 
     return NumeroBase10;
@@ -57,7 +57,7 @@ char base_digits[36] =
 
 int Exponencial(int numero, int expoente) {
 
-	int numeroFinal=numero;
+	long int numeroFinal=numero;
 	for (int i = 1; i < expoente; i++) {
 		numeroFinal = numeroFinal * numero;
 	}

@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "lib.h"
 
-
 int main(int argc, char *argv[]
 ) {
 
@@ -21,14 +20,17 @@ int main(int argc, char *argv[]
 
 		printf("\n");
 
-		if (baseAtual >= 2 && baseAtual <= 36 && baseDesejada >= 2 && baseDesejada <= 36) {
+		if (baseAtual <= 2 &&  baseAtual>=36 && baseDesejada<=2 && baseDesejada >=36) {
 			printf("Bases Invalidas, menores do que 2 ou maiores do que 36 \n");
 			return 1;
 		}
 
-		NumeroBase10 = convertToTen(argv[1], baseAtual);
+		if (baseAtual != 10)
+			NumeroBase10 = convertToTen(argv[1], baseAtual);
+		else
+			NumeroBase10 = atoi(argv[1]);
 
-		if (NumeroBase10 <= (Exponencial(2, 36)) && NumeroBase10 >= 0) {
+		if (NumeroBase10 <= 68719476736 && NumeroBase10 >= 0) {
 
 			convertToBase(NumeroBase10, baseDesejada);
 
