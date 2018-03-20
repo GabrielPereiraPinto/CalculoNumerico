@@ -1,0 +1,23 @@
+No código feito para poder transformar um número A da base N para a base M foi optado pela seguinte aproximação
+
+Primeiramente são feitas as verificações para saber se as bases sao válidas, isso é se elas se encontram entre 2 e 36.
+
+Feita essas verificações o número recebido será transformado para a base 10; dessa forma é feito uma verificação se ele já se encontra na base 10 para não executar código sem precisar; caso ele não esteja na base 10 é chamado a primeira função
+ConverToTen.
+Esta função separa cada um dos dígitos do número de entrada e do dígito menos significativo ao mais significativo é a conversão para a base 10.
+
+Essa conversão é feita considerando esse número em base 10, onde essa conversão é feita pela função convertToDecimal , e então multiplicado pela base de entrada N elevado ao valor daquele dígito, então o dígito menos significativo é elevado a 0, o próximo dígito a 1, depois a 2 e assim consequentemente.
+Para cada dígito transformado para a base 10 é feito um somatório e ao final esse somatório possui o número transformado para a base 10.
+
+Com esse número na base 10 é então chamada a segunda função ConvertToBase que irá converter para a ase M desejada.
+Essa função tem um vetor de tamanho 36 que possui todos os dígitos possíveis de todas as bases, isso será usado para imprimir o número na base desejada.
+Para transformar o número para a base M desejada é feito um loop de while que enquanto o número for diferente de 0 será executado o código que:
+O número em base 10 é divido pela base M desejada e o resto dessa divisão é armazenado em um vetor, depois o número é igualado a ele mesmo divido pela base desejada 
+Isso é feito até o resto ser 0.
+
+Ao término desse processo se tem um vetor com todos os restos e é feito uma leitura no vetor de dígitos citado antes para a posição dele.
+Então se um resto foi 15 será pego o dígito da posição 15 do vetor de dígitos, que nesse caso corresponde a letra E.
+
+Dessa forma é garantido que o dígito sempre estará dentre os dígitos esperados e por ser o resto da divisão que determina a posição que será lida do vetor nunca se obterá um número maior do que a base desejada.
+
+
