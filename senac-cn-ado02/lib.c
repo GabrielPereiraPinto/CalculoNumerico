@@ -5,18 +5,12 @@
 
 double fatorial(double x) {
 
-	if (x == 0)
+
+	if (x == 0 || x == 1)
 		return 1;
-	
-	double atual = x;
-	double resultado = 1;
 
-	while (atual > 0) {
-		resultado *= atual;
-		atual--;
-	}
-	return resultado;
-
+	else
+		return (x * fatorial(x - 1));
 }
 
 double sen(double x) {
