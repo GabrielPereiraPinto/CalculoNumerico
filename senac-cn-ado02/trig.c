@@ -9,8 +9,8 @@ int main() {
 
 
 	FILE *filePath;
+	filePath = fopen("seno.dat", "w");
 	filePath = fopen("seno.dat", "a");
-	filePath = fopen("seno.dat", "b");
 
 	for (int i = 0; i < 721; i++) {
 
@@ -22,8 +22,8 @@ int main() {
 
 	fclose(filePath);
 
+	filePath = fopen("cosseno.dat", "w");
 	filePath = fopen("cosseno.dat", "a");
-	filePath = fopen("cosseno.dat", "b");
 
 	for (int i = 0; i < 721; i++) {
 
@@ -38,7 +38,7 @@ int main() {
 	free(filePath);
 
 
-	FILE *gnuplot = popen("gnuplot -persistent", "a");
+	FILE *gnuplot = popen("gnuplot -persistent", "w");
 	fprintf(gnuplot, "%s\n%s", "set terminal png size 400,300\nset output 'seno.png'", "plot 'seno.dat'\n");
 	fprintf(gnuplot, "%s\n%s", "set terminal png size 400,300\nset output 'cosseno.png'", "plot 'cosseno.dat'");
 
