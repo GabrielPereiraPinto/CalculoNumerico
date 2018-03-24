@@ -12,12 +12,14 @@ int main() {
 	filePath = fopen("seno.dat", "w");
 	filePath = fopen("seno.dat", "a");
 
-	for (int i = 0; i < 721; i++) {
+	for (int i = 0; i < 721; i++) 
+	{
 
 		double rad = i * (pi / 180);
 		double seno = sen(rad);
-		double erroAbsoluto = fabs(sin(rad) - sen(rad));
-		double erroRelativo = fabs(erroAbsoluto / sen(rad));
+		double senFunc = sin(rad);
+		double erroAbsoluto = ((double)fabs(senFunc - seno));
+		double erroRelativo = ((double)fabs(erroAbsoluto / seno));
 		fprintf(filePath, "%d\t%f\t%f\t%f\n", i, seno, erroAbsoluto, erroRelativo);
 	}
 
@@ -29,9 +31,10 @@ int main() {
 	for (int i = 0; i < 721; i++) {
 
 		double rad = i * (pi / 180);
-		double cosseno = cos(rad);
-		double erroAbsoluto = fabs(cos(rad) - cos(rad));
-		double erroRelativo = fabs(erroAbsoluto / cos(rad));
+		double cosseno = coss(rad);
+		double cosFunc = cos(rad);
+		double erroAbsoluto = ((double)fabs(cosFunc - cosseno));
+		double erroRelativo = ((double)fabs(erroAbsoluto / cosseno));
 		fprintf(filePath, "%d\t%f\t%f\t%f\n", i, cosseno, erroAbsoluto, erroRelativo);
 	}
 

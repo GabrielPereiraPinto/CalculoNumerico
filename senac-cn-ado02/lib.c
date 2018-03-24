@@ -17,7 +17,7 @@ double sen(double x) {
 
 	double resultado = 0;
 	double temp = 0;
-	for (int n = 0; n < 20; n++) {
+	for (int n = 0; n <11; n++) {
 		temp = 2 * n + 1;
 		resultado += (pow(-1, n) * pow(x, temp) / fatorial(temp));
 	}
@@ -25,11 +25,11 @@ double sen(double x) {
 	return resultado;
 }
 
-double cos(double x) {
+double coss(double x) {
 
 	double resultado = 0;
 	double temp = 0;
-	for (int n = 0; n < 20; n++) {
+	for (int n = 0; n < 11; n++) {
 		temp = 2 * n;
 		resultado += (pow(-1, n) * pow(x, temp) / fatorial(temp));
 	}
