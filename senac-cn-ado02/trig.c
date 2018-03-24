@@ -18,7 +18,7 @@ int main() {
 		double seno = sen(rad);
 		double erroAbsoluto = fabs(sin(rad) - sen(rad));
 		double erroRelativo = fabs(erroAbsoluto / sen(rad));
-		fprintf(filePath, "%d\t%f\t%f\t%f\n", i, sen(rad), erroAbsoluto, erroRelativo);
+		fprintf(filePath, "%d\t%f\t%f\t%f\n", i, seno, erroAbsoluto, erroRelativo);
 	}
 
 	fclose(filePath);
@@ -32,7 +32,7 @@ int main() {
 		double cosseno = cos(rad);
 		double erroAbsoluto = fabs(cos(rad) - cos(rad));
 		double erroRelativo = fabs(erroAbsoluto / cos(rad));
-		fprintf(filePath, "%d\t%f\t%f\t%f\n", i, cos(rad), erroAbsoluto, erroRelativo);
+		fprintf(filePath, "%d\t%f\t%f\t%f\n", i, cosseno, erroAbsoluto, erroRelativo);
 	}
 
 	fclose(filePath);
