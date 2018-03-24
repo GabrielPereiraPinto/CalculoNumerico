@@ -1,0 +1,36 @@
+PAra a realização desse trabalho foram criadas 3 funções principais no arquivo lib.c
+
+sendo elas:
+-fatorial; que recebe um valor double de um número qualquer e retorna um double com um fatorial calculado;
+-sen; que recebe o valor de double de um grau em  radianos e retorna double com a função seno calculada;
+-coss; que recee um valor double de um grau em radianos e retorna um valor double com a função seno  calculada;
+
+Um detalhe que a função de calcular o sen do C se chama sin, então não ouve problemas, porém a função do cosseno se chama cos, assim para não ocorrer nenhuma troca das funções desejadas foi optado por se dar o nome de coss com um s a mais.
+
+
+Primeiramente a função Fatorial:
+Esta função trabalha de forma recursiva, um número fatorial é calculado multiplicando o mesmo pelo seus números anteriores até 1;
+Desta forma a função recebe um valor, verifica se esse valor é 0 ou 1, visto que 1 é o critério de parada e o fatorial de 0 é considerado 1.
+Caso não seja igual a função então funciona de forma recursiva, retornando o valor de x multiplicado pela função recusriva no qual o valor passado é x-1, ou seja, anterior de x.
+
+A Função Sen e Coss funcionam de forma semelhante:
+ambas criam um valor de resultado e temporário igual a 0, e depois executam seus respectivos calculos através das séries de Taylor.
+Para esse calculo é  feito um for que vai de 0 até a quantidade de iterações desejadas, para este trabalho foi optado um total de 20 iterações.
+A grande diferença entre as duas funções é que para o seno o temporário é igualado a 2 multiplicado por n, o número da iteração, somado 1, 2*n+1; enquando do cosseno é apenas multiplicado por 2 sem a soma, 2*n.
+depois disso é feito um somatório dos resultados, cujo valor é dado pela multiplicação da iteração elevada a -1 e do grau em radiando elevado ao temporário, tudo isso divido pela divisão do fatorial do temporário.
+ou seja 
+Somatório de resultados, cujo resultado = [(n^-1)*(x)^(temp)] / fatorial (temp);
+lembrando que n é a iteração, x é o grau em radiandos, e temp pode ser 2*n+1 para o seno e 2*n para o cosseno.
+
+
+Já o arquivo trig.c utiliza-se dessas funções para fazer o que foi pedido  no trabalho.
+
+Primeiramente é criado um ponteiro para poder criar o caminho do arquivo seno.dat.
+Depois é rodada a iteração de 0 até 720 para calcular todos os senos requeridos,
+para cada seno é calculado seu erro absoluto, que é dado pela função seno do C subtraido pela função seno criada neste trabalho,
+por fim esses arquivos são printados em colunas tendo um tab de diferença entre elas no arquivo do seno.dat
+
+Depois o  cosseno funciona da mesma forma
+
+Por ultimo são calculados ambos os graficos dados os valores anterires calculados em seus respectivos .dat
+ 
