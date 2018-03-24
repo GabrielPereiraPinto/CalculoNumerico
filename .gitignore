@@ -5,3 +5,10 @@ senac-cn-ado02/senac-cn-ado02.sln
 senac-cn-ado02/.vs/senac-cn-ado02/v15/Browse.VC.opendb
 senac-cn-ado02/senac-cn-ado02.vcxproj
 senac-cn-ado02/senac-cn-ado02.vcxproj.filters
+*.pdb
+*.idb
+senac-cn-ado02/Debug/senac-cn-ado02.tlog/unsuccessfulbuild
+*.ipch
+*.log
+*.tlog
+*.obj
