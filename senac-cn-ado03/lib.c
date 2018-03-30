@@ -64,10 +64,10 @@ void euler_ldbl() {
 	long double n;
 
 	for (int i = 0; i < 21; i++) {
-		n = pow(10, i);
-		euler = pow((1 + (1 / n)), n);
+		n = powl(10, i);
+		euler = powl((1 + (1 / n)), n);
 
-		fprintf(gnuplot, "%LF %LF\n", n, euler);
+		fprintf(gnuplot, "%Lf %Lf\n", n, euler);
 	}
 
 	fprintf(gnuplot, "e");
