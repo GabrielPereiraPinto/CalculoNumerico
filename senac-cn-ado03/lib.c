@@ -67,7 +67,7 @@ void euler_ldbl() {
 		n = pow(10, i);
 		euler = pow((1 + (1 / n)), n);
 
-		fprintf(gnuplot, "%Lf %Lf\n", n, euler);
+		fprintf(gnuplot, "%LF %LF\n", n, euler);
 	}
 
 	fprintf(gnuplot, "e");
