@@ -1,8 +1,8 @@
 program bissec
 implicit none
 
-    REAL :: lower,upper,errorAprox,input,root
-    INTEGER :: maxIterations,count
+    REAL :: lower,upper,med, input, error
+    INTEGER :: iterations,i
     CHARACTER(len = 32) ::arg
     CALL get_command_argument(1, arg)
 
@@ -11,28 +11,27 @@ implicit none
         print *, "Valor inválido, precisa ser maior do que 0"
             stop 1
     END IF
-
-    count = 0
+    
     maxIterations = 10000
-    errorAprox = 1E-6
+    errorAprox = 0.0000001
     lower = 0
     upper = input
-    root = (upper + lower) / 2
 
+    DO i = 1, iterations
+        med = (upper + lower) / 2.0
 
-    DO WHILE (ABS (upper-root) >errorAprox .AND. count<maxIterations)
-        IF ((root*2)>input) THEN
-            upper = root
-        
-        ELSE
-            lower = root
+        if (med ** 2 ==input .OR. (upper - lower) / 2.0 < error) then
 
-        END IF
+            print *, real(med)
+            EXIT
+        end if
 
-        root = (upper+lower) / 2
-        count = count + 1
+        if (med **2 >input ) then
+            max = med 
+        else if (med ** 2 < input) then
+            min = med 
 
+        end if 
     end do
-
-    print *, root
+        
 END PROGRAM bissec
