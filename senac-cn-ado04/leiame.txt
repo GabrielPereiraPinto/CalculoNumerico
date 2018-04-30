@@ -1,0 +1,15 @@
+Para este trabalho foram realizados 3 arquivos diferentes.
+um deles utiliza-se do método de Newton, um deles do método da Secante e um deles do método da Bissecção.
+Todos os métodos foram implementados para calcular a raiz quadrada de um número.
+
+
+Para os métodos de Newton e Da secante o valor inicial é dado pelo valor de entrada.
+O código realiza um loop até que seja atingida uma das condições de parada, uma delas sendo o valor da raiz encontrada ao quadrado ser igual ao valor de entrada e o outro quando a precisão é encontrada, que nesse caso equivale a 10^-6 ou 0.000001
+
+Para a verificação da precisão foi utilizado o calculo de p1-p < precisão.
+
+
+Para o caso da bissecção um intervalo incial é calculado a partir do valor de entrada, 
+com esses dois valores então é calculado a média e feita a verificação para qual dos dois intervalos se encontra a raiz desejada.
+isso é feito de forma consecutiva até que seja encontrado o valor desejado de acordo com o critério de parada.
+os critérios de parada são os mesmos que os dos outros dois métodos,
