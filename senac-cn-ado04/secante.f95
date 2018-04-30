@@ -11,7 +11,9 @@ implicit none
         print *, "Valor inválido, precisa ser maior do que 0"
             stop 1
     END IF
-
+    
+    iterations = 10000
+    error = 0.0000001
     p0 = input
     pn = input -1.0
 
@@ -23,7 +25,7 @@ implicit none
             EXIT
         end if 
         
-        p0 = p
+        p0 = pn
         pn= p1
     end do
 end program  secante
