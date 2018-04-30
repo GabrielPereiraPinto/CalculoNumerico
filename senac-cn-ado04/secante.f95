@@ -25,5 +25,6 @@ implicit none
         
         p0 = p
         pn= p1
+    end do
 end program  secante
     
