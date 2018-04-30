@@ -12,8 +12,8 @@ implicit none
             stop 1
     END IF
     
-    maxIterations = 10000
-    errorAprox = 0.0000001
+    iterations = 10000
+    error = 0.0000001
     lower = 0
     upper = input
 
@@ -27,11 +27,11 @@ implicit none
         end if
 
         if (med **2 >input ) then
-            max = med 
+            upper = med 
         else if (med ** 2 < input) then
-            min = med 
+            lower = med 
 
         end if 
     end do
-        
+
 END PROGRAM bissec
