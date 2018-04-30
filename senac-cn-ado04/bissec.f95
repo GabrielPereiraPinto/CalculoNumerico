@@ -1,13 +1,13 @@
 program bissec
 implicit none
 
-    REAL ::     lower,  upper,  errorAprox, input,  root
-    INTEGER :: maxIterations,   count
+    REAL :: lower,upper,errorAprox,input,root
+    INTEGER :: maxIterations,count
     CHARACTER(len = 32) ::arg
-    CALL get_command_artgument(1,arg)
+    CALL get_command_argument(1, arg)
 
-    READ (arg,*) input
-    IF (input < 0)
+    READ (arg, *) input
+    IF (input < 0) THEN
         print *, "Valor inválido, precisa ser maior do que 0"
             stop 1
     END IF
