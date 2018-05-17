@@ -37,8 +37,8 @@ program bhaskara
             stringx1 = writex(stringx1)
             stringxi = writex(stringxi)
                     
-            write(*, '(a,a,a,a,a)') 'x1 = ', trim(stringx1), ' + ', trim(stringxi), 'i'
-            write(*, '(a,a,a,a,a)') 'x2 = ', trim(stringx1), ' - ', trim(stringxi), 'i'
+            write(*, '(a,a,a,a,a)') 'x1 = ', trim(stringx1), ' + ', trim(stringxi), '  i'
+            write(*, '(a,a,a,a,a)') 'x2 = ', trim(stringx1), ' - ', trim(stringxi), ' i'
     end if
     
     contains
