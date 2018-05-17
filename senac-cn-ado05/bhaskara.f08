@@ -1,66 +1,66 @@
-PROGRAM bhaskara
+program bhaskara
 
-    IMPLICIT NONE
+    implicit none
 
-    INTEGER :: n
-    CHARACTER(len= 32) :: arg, stringX1, stringX2, stringXi 
-    DOUBLE PRECISION :: ABC(0:2), delta, x1, x2, xi
-	
-    DO n = 1, 3 
-        CALL get_command_argument(n, arg)
-        READ(arg,*) ABC(n-1) 
-    END DO
-
-    delta = getDelta(ABC(0), ABC(1), ABC(2))
-
-    IF(delta>= 0.0) THEN 
-			x1= (-ABC(1) + (delta ** 0.5)) / (2 * ABC(0)) 
-			x2= (-ABC(1) - (delta ** 0.5)) / (2 * ABC(0))
-			
-			WRITE(stringX1, '(F0.16)') x1
-			WRITE(stringX2, '(F0.16)') x2
-			
-			stringX1= writeX(stringX1)
-			stringX2= writeX(stringX2)
-			
-			WRITE(*, '(A,A)') 'x1= ', stringX1
-			WRITE(*, '(A,A)') 'x2= ', stringX2
-			
-		ELSE 
-			delta= -delta 
-			x1= -ABC(1) / (2 * ABC(0))
-			xi= (delta ** 0.5) / (2 * ABC(0))
-			
-			WRITE(stringX1, '(F0.16)') x1 
-			WRITE(stringXi, '(F0.16)') xi
-			
-			stringX1 = writeX(stringX1)
-			stringXi = writeX(stringXi)
-					
-			WRITE(*, '(A,A,A,A,A)') 'x1 = ', trim(stringX1), ' + ', trim(stringXi), 'i'
-			WRITE(*, '(A,A,A,A,A)') 'x2 = ', trim(stringX1), ' - ', trim(stringXi), 'i' 
-    END IF
+    integer :: n
+    character(len= 32) :: arg, stringx1, stringx2, stringxi
+    double precision :: abc(0:2), delta, x1, x2, xi
     
-    CONTAINS
-    
-		FUNCTION getDelta(a, b, c) RESULT(result)
-			DOUBLE PRECISION, intent(in) :: a, b, c
-			DOUBLE PRECISION :: result
-		
-			result = (b ** 2) - (4 * a * c)
-		END FUNCTION
-		
-		FUNCTION writeX(str) RESULT(result)
-			CHARACTER(len = 32), intent(in) :: str
-			CHARACTER(len = 32) :: result
-			
-			IF(str(1:1) == ".") THEN
-				result = "0" // trim(str)
-			ELSE IF(str(1:2) == "-.") THEN
-				result = "-0" // trim(str(3:))
-			ELSE
-				result = str
-			END IF 
-		END FUNCTION
+    do n = 1, 3
+        call get_command_argument(n, arg)
+        read(arg,*) abc(n-1)
+    end do
 
-END PROGRAM
+    delta = getdelta(abc(0), abc(1), abc(2))
+
+    if(delta>= 0.0) then
+            x1= (-abc(1) + (delta ** 0.5)) / (2 * abc(0))
+            x2= (-abc(1) - (delta ** 0.5)) / (2 * abc(0))
+            
+            write(stringx1, '(f0.16)') x1
+            write(stringx2, '(f0.16)') x2
+            
+            stringx1= writex(stringx1)
+            stringx2= writex(stringx2)
+            
+            write(*, '(a,a)') 'x1= ', stringx1
+            write(*, '(a,a)') 'x2= ', stringx2
+            
+        else
+            delta= -delta
+            x1= -abc(1) / (2 * abc(0))
+            xi= (delta ** 0.5) / (2 * abc(0))
+            
+            write(stringx1, '(f0.16)') x1
+            write(stringxi, '(f0.16)') xi
+            
+            stringx1 = writex(stringx1)
+            stringxi = writex(stringxi)
+                    
+            write(*, '(a,a,a,a,a)') 'x1 = ', trim(stringx1), ' + ', trim(stringxi), 'i'
+            write(*, '(a,a,a,a,a)') 'x2 = ', trim(stringx1), ' - ', trim(stringxi), 'i'
+    end if
+    
+    contains
+    
+        function getdelta(a, b, c) result(result)
+            double precision, intent(in) :: a, b, c
+            double precision :: result
+        
+            result = (b ** 2) - (4 * a * c)
+        end function
+        
+        function writex(str) result(result)
+            character(len = 32), intent(in) :: str
+            character(len = 32) :: result
+            
+            if(str(1:1) == ".") then
+                result = "0" // trim(str)
+            else if(str(1:2) == "-.") then
+                result = "-0" // trim(str(3:))
+            else
+                result = str
+            end if
+        end function
+
+end program
